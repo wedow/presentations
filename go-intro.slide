@@ -1,0 +1,113 @@
+Go In A Nutshell
+A quick high-level overview of Go and its history
+23 Feb 2018
+
+Greg Wedow
+CSI
+gwedow@loyalty.com
+@gwedow
+
+#* SUMMARY
+#One of the fastest growing languages of the past few years, Go was developed by Google to create performant and maintainable server software. It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language. In this talk we'll explore Go's history and purpose along with a high level view of its syntax, features, and tooling.
+
+* What is Go?
+A new(ish), general purpose programming language.  (1.0 released in 2012)
+
+- Compiled
+- Statically Typed
+- Garbage Collected
+- Multithreaded
+- Concurrent
+- Minimal
+- Fast
+.image images/gopher.jpg _ 90
+
+: Compiled to native machine code. Write once, run everywhere. Single static binary makes deployment a breeze.
+: Concurrency is part of the core language which allows us to easily create scalable services.
+: Minimal language (only 25 keywords) makes it easy to learn and to maintain
+: Fast has a few meanings. Fast to learn, fast development cycle, fast execution.
+
+* Who's using Go?
+
+- Google
+- Facebook
+- Twitter
+- Netflix
+- Dropbox
+- Atlassian
+- Uber
+- Twitch
+
+And so many more at: [[https://github.com/golang/go/wiki/GoUsers]]
+
+: Many companies have also released great open source packages to solve common issues
+
+* What are they using it for?
+
+Two major categories have embraced Go: *web* *backends* and *tool* *development*
+
+Go was designed for server development but its ability to easily create zero-dependency cross platform binaries made it an instant hit in the infrastructure and system administration spaces.
+
+Some popular projects chose Go for this reason:
+
+- Docker
+- Kubernetes
+- Terraform
+- Ethereum
+- NSQ
+
+* Why
+
+Robert Griesemer, Rob Pike, and Ken Thompson found Google's C++ and Java projects were often having trouble scaling to large codebases/teams/servers. They decided to make a language based around composing simple constructs which can fully utilize modern multi-core servers.
+
+The focus was on three aspects:
+
+- Fast compile times
+- Concurrency
+- Simplicity
+
+* Concurrency
+
+Concurrency support is offered through two first-class language features: *goroutines* and *channels*
+
+Think of goroutines as incredibly lightweight threads and channels as queues or mailboxes which goroutines use to communicate.
+
+There's a common Go slogan:
+
+"Do not communicate by sharing memory; instead, share memory by communicating."
+
+Because of these features, Go code is synchronous by nature and embraces blocking operations.
+
+Any function can be run asynchronously in a goroutine simply by calling the function with the `go` keyword.
+
+* Hello World
+.play -edit code/go-intro/hello-world.go
+
+* Hello World - as a HTTP server
+.play -edit code/go-intro/hello-world-server.go
+
+: wrap `calls++` with `r.URL.Path == "/"` check
+
+* Deployment
+.code code/go-intro/Dockerfile
+
+* What's not to like?
+
+Common complaints include:
+
+- *Boilerplate* - manual error handling gets tedious
+- *No* *generics* - analytics and ETL tasks are harder than they should be
+- *Dependency* *Management* - packages have no version locking
+
+* Community Resources
+
+- Go Playground [[https://play.golang.org]]
+- Official Tour [[https://tour.golang.org]]
+- Effective Go [[https://golang.org/doc/effective_go.html]]
+- How to Write Go Code [[https://golang.org/doc/code.html]]
+- golang-nuts mailing list [[https://groups.google.com/forum/#!forum/golang-nuts]]
+- Gophers Slack [[https://invite.slack.golangbridge.org/]]
+
+Along with tons of community articles and a very helpful Stack Overflow tag
+
+* What questions do you have?
