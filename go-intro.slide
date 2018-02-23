@@ -8,7 +8,8 @@ gwedow@loyalty.com
 @gwedow
 
 #* SUMMARY
-#One of the fastest growing languages of the past few years, Go was developed by Google to create performant and maintainable server software. It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language. In this talk we'll explore Go's history and purpose along with a high level view of its syntax, features, and tooling.
+: One of the fastest growing languages of the past few years, Go was developed by Google to create performant and maintainable server software. It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language. In this talk we'll explore Go's history and purpose along with a high level view of its syntax, features, and tooling.
+: Hands up if you: have heard of Go; have used Go; just looking to kill some time before the weekend starts
 
 * What is Go?
 A new(ish), general purpose programming language.  (1.0 released in 2012)
@@ -21,6 +22,8 @@ A new(ish), general purpose programming language.  (1.0 released in 2012)
 - Minimal
 - Fast
 .image images/gopher.jpg _ 90
+
+: Go is roughly the same age as Node (both emerged in 2009) but where Node is just a runtime for an existing language, Go's language spec didn't fully stabilize until 2012.
 
 : Compiled to native machine code. Write once, run everywhere. Single static binary makes deployment a breeze.
 : Concurrency is part of the core language which allows us to easily create scalable services.
@@ -66,6 +69,9 @@ The focus was on three aspects:
 - Concurrency
 - Simplicity
 
+: Interesting note: they assumed other C++ and Java folks would be eager to adopt Go but found that most adoption was actually from the dynamic languages - mostly Python, Ruby, and JS. JS devs particularly love the change to a purely synchronous style of coding.
+: https://medium.com/@tjholowaychuk/farewell-node-js-4ba9e7f3e52b
+
 * Concurrency
 
 Concurrency support is offered through two first-class language features: *goroutines* and *channels*
@@ -79,6 +85,8 @@ There's a common Go slogan:
 Because of these features, Go code is synchronous by nature and embraces blocking operations.
 
 Any function can be run asynchronously in a goroutine simply by calling the function with the `go` keyword.
+
+: Hands up if you've done multithreaded development before; concurrent programming?. Anyone want to describe that experience? Anyone willing to call it fun?
 
 * Hello World
 .play -edit code/go-intro/hello-world.go
